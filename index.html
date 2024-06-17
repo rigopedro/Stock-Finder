@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Stock Tracker</title>
+    <title>Stock Finder</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 </head>
-
 <body>
-
     <div class="container">
-        <h1>Stock Tracker</h1>
-        <!-- Precisa adicionar o name no form, e em todos os campos que você quer obter os valores, esse pode deletar ou deixar aqui para tu não esquecer como faz -->
+        <h1>Stock Finder</h1>
         <form name="myForm" id="myForm">
-             <input type="text" id="symbol" placeholder="Coloque a sigla da ação" name="search">
+            <input type="text" id="symbol" placeholder="Coloque a sigla da ação" name="search">
+            <div id="suggestions" class="suggestions"></div>
             <button type="submit">Procurar</button>
-
         </form>
-        <ul id="stock-list"></ul>
 
+        <div id="stock-info">
+            <h2 id="stock-name"></h2>
+            <p id="stock-price"></p>
+            <p id="stock-change"></p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="stocks">Ações</button>
+            <button class="tab-button" data-tab="indices">Índices</button>
+            <button class="tab-button" data-tab="crypto">Criptos</button>
+            <button class="tab-button" data-tab="commodities">Commodities</button>
+            <button class="tab-button" data-tab="currencies">Moedas</button>
+        </div>
+
+        <div class="tab-content active" id="stocks">
+            <canvas id="stockChart" width="400" height="200"></canvas>
+            <table id="stockTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Abertura</th>
+                        <th>Fechamento</th>
+                        <th>Máximo</th>
+                        <th>Mínimo</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="stock-list"></tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="indices">
+            <!-- Conteúdo para índices, se necessário -->
+        </div>
+        <div class="tab-content" id="crypto">
+            <!-- Conteúdo para criptos, se necessário -->
+        </div>
+        <div class="tab-content" id="commodities">
+            <!-- Conteúdo para commodities, se necessário -->
+        </div>
+        <div class="tab-content" id="currencies">
+            <!-- Conteúdo para moedas, se necessário -->
+        </div>
     </div>
 
     <script src="index.js"></script>
 </body>
-
 </html>
