@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Stock Finder</h1>
@@ -18,12 +20,6 @@
             <div id="suggestions" class="suggestions"></div>
             <button type="submit">Procurar</button>
         </form>
-
-        <div id="stock-info">
-            <h2 id="stock-name"></h2>
-            <p id="stock-price"></p>
-            <p id="stock-change"></p>
-        </div>
 
         <div class="tabs">
             <button class="tab-button active" data-tab="stocks">Ações</button>
@@ -34,7 +30,12 @@
         </div>
 
         <div class="tab-content active" id="stocks">
-            <canvas id="stockChart" width="400" height="200"></canvas>
+            <canvas id="stockChart" width="600" height="400"></canvas>
+            <div id="stock-info">
+                <h2 id="stock-name"></h2>
+                <p id="stock-price"></p>
+                <p id="stock-change"></p>
+            </div>
             <table id="stockTable" class="display">
                 <thead>
                     <tr>
@@ -50,15 +51,92 @@
             </table>
         </div>
         <div class="tab-content" id="indices">
+            <canvas id="indicesChart" width="600" height="400"></canvas>
+            <div id="indices-info">
+                <h2 id="indices-name"></h2>
+                <p id="indices-price"></p>
+                <p id="indices-change"></p>
+            </div>
+            <table id="indicesTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Abertura</th>
+                        <th>Fechamento</th>
+                        <th>Máximo</th>
+                        <th>Mínimo</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="indices-list"></tbody>
+            </table>
         </div>
         <div class="tab-content" id="crypto">
+            <canvas id="cryptoChart" width="600" height="400"></canvas>
+            <div id="crypto-info">
+                <h2 id="crypto-name"></h2>
+                <p id="crypto-price"></p>
+                <p id="crypto-change"></p>
+            </div>
+            <table id="cryptoTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Abertura</th>
+                        <th>Fechamento</th>
+                        <th>Máximo</th>
+                        <th>Mínimo</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="crypto-list"></tbody>
+            </table>
         </div>
         <div class="tab-content" id="commodities">
+            <canvas id="commoditiesChart" width="600" height="400"></canvas>
+            <div id="commodities-info">
+                <h2 id="commodities-name"></h2>
+                <p id="commodities-price"></p>
+                <p id="commodities-change"></p>
+            </div>
+            <table id="commoditiesTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Abertura</th>
+                        <th>Fechamento</th>
+                        <th>Máximo</th>
+                        <th>Mínimo</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="commodities-list"></tbody>
+            </table>
         </div>
         <div class="tab-content" id="currencies">
+            <canvas id="currenciesChart" width="600" height="400"></canvas>
+            <div id="currencies-info">
+                <h2 id="currencies-name"></h2>
+                <p id="currencies-price"></p>
+                <p id="currencies-change"></p>
+            </div>
+            <table id="currenciesTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Abertura</th>
+                        <th>Fechamento</th>
+                        <th>Máximo</th>
+                        <th>Mínimo</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody id="currencies-list"></tbody>
+            </table>
         </div>
     </div>
 
     <script src="index.js"></script>
 </body>
+
 </html>
